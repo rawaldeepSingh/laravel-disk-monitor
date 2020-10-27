@@ -3,7 +3,6 @@
 namespace Spatie\DiskMonitor;
 
 use Illuminate\Support\ServiceProvider;
-use Spatie\DiskMonitor\Commands\DiskMonitorCommand;
 
 class DiskMonitorServiceProvider extends ServiceProvider
 {
