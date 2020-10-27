@@ -1,10 +1,6 @@
 <?php
 
-<<<<<<< HEAD
-namespace Spatie\LaravelDiskMonitor\Tests;
-=======
-namespace Spatie\Skeleton\Tests;
->>>>>>> 9ca08d08cb8a4fa43ccb4622ec4166a7b32c2532
+namespace Spatie\DiskMonitor\Tests;
 
 class ExampleTest extends TestCase
 {

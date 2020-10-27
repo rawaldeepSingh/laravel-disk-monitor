@@ -27,13 +27,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\LaravelDiskMonitor\\": "src",
-            "Spatie\\LaravelDiskMonitor\\Database\\Factories\\": "database/factories"
+            "Spatie\\DiskMonitor\\": "src",
+            "Spatie\\DiskMonitor\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\LaravelDiskMonitor\\Tests\\": "tests"
+            "Spatie\\DiskMonitor\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -48,11 +48,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\LaravelDiskMonitor\\LaravelDiskMonitorServiceProvider"
-            ],
-            "aliases": {
-                "LaravelDiskMonitor": "Spatie\\LaravelDiskMonitor\\LaravelDiskMonitorFacade"
-            }
+                "Spatie\\DiskMonitor\\DiskMonitorServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev",

@@ -26,13 +26,13 @@ composer require spatie/laravel-disk-monitor
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --provider="Spatie\LaravelDiskMonitor\LaravelDiskMonitorServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="Spatie\DiskMonitor\DiskMonitorServiceProvider" --tag="migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="Spatie\LaravelDiskMonitor\LaravelDiskMonitorServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Spatie\DiskMonitor\DiskMonitorServiceProvider" --tag="config"
 ```
 
 This is the contents of the published config file:
@@ -45,7 +45,7 @@ return [
 ## Usage
 
 ``` php
-$laravel-disk-monitor = new Spatie\LaravelDiskMonitor();
+$laravel-disk-monitor = new Spatie\DiskMonitor();
 echo $laravel-disk-monitor->echoPhrase('Hello, Spatie!');
 ```
 
