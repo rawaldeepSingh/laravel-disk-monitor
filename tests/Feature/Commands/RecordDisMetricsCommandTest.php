@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Spatie\DiskMonitor\Tests\Feature\Commands;
 
@@ -20,7 +20,6 @@ class RecordDiskMetricsCommandTest extends TestCase
     /** @test */
     public function it_will_record_the_file_count_for_a_single_disk()
     {
-
         $this
             ->artisan(RecordDiskMetricsCommand::class)
             ->assertExitCode(0);
@@ -33,7 +32,6 @@ class RecordDiskMetricsCommandTest extends TestCase
             ->assertExitCode(0);
         $entry = DiskMonitorEntry::last();
         $this->assertEquals(1, $entry->file_count);
-
     }
 
     /** @test */

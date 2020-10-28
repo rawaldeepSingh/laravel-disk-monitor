@@ -17,4 +17,3 @@ class DiskMonitorEntry extends Model
         return static::orderByDesc('id')->first();
     }
 }
-
