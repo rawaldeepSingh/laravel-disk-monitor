@@ -14,10 +14,11 @@ class RecordDiskMetricsCommandTest extends TestCase
         parent::setUp();
 
         Storage::fake('local');
+        Storage::fake('anotherDisk');
     }
 
     /** @test */
-    public function it_will_record_the_file_count_for_a_disks()
+    public function it_will_record_the_file_count_for_a_single_disk()
     {
 
         $this
@@ -32,6 +33,18 @@ class RecordDiskMetricsCommandTest extends TestCase
             ->assertExitCode(0);
         $entry = DiskMonitorEntry::last();
         $this->assertEquals(1, $entry->file_count);
+
+    }
+
+    /** @test */
+    public function it_will_record_the_file_count_for_multiple_disks()
+    {
+        config()->set('disk-monitor.disk_names', ['local', 'anotherDisk']);
+
+        $this
+            ->artisan(RecordDiskMetricsCommand::class)
+            ->assertExitCode(0);
+        $this->assertCount(2, DiskMonitorEntry::get());
 
     }
 }
