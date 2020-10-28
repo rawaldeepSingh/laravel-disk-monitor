@@ -2,7 +2,9 @@
 
 namespace Spatie\DiskMonitor\Tests;
 
+use CreateDiskMonitorTables;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Route;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Spatie\DiskMonitor\DiskMonitorServiceProvider;
 
@@ -15,6 +17,9 @@ class TestCase extends Orchestra
         Factory::guessFactoryNamesUsing(
             fn (string $modelName) => 'Spatie\\DiskMonitor\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
+        
+
+        Route::diskMonitor('disk-monitor');
     }
 
     protected function getPackageProviders($app)
@@ -35,6 +40,7 @@ class TestCase extends Orchestra
 
         
         include_once __DIR__.'/../database/migrations/create_disk_monitor_tables.php.stub';
-        (new \CreateDiskMonitorTables())->up();
+        (new CreateDiskMonitorTables())->up();
+
     }
 }
