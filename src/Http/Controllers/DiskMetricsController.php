@@ -8,8 +8,8 @@ class DiskMetricsController
 {
     public function __invoke()
     {
-       $diskMonitorEntries =  DiskMonitorEntry::latest()->get();
+        $diskMonitorEntries = DiskMonitorEntry::latest()->get();
 
-       return view('disk-monitor::entries', compact('entries'));
+        return view('disk-monitor::entries', compact('entries'));
     }
 }

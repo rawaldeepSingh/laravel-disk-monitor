@@ -22,7 +22,7 @@ class RecordDiskMetricsCommand extends Command
 
     protected function recordMetrics(string $diskName): void
     {
-        $this->info("Recording metrics for disk `{$diskName}`");
+        $this->info("Recording metrics for disk `{$diskName}`...");
 
         $disk = Storage::disk($diskName);
 
